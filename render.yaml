@@ -1,0 +1,28 @@
+# render.yaml — Render deployment config
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: traceable-search
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SERPER_API_KEY
+        sync: false # set manually in Render dashboard
+      - key: LLM_API_KEY
+        sync: false # set manually in Render dashboard
+      - key: LLM_BASE_URL
+        value: https://openrouter.ai/api/v1
+      - key: LLM_MODEL
+        value: anthropic/claude-3-haiku
+      - key: SEARCH_RESULTS_PER_QUERY
+        value: "8"
+      - key: MAX_PAGES_TO_SCRAPE
+        value: "8"
+      - key: MAX_CHARS_PER_PAGE
+        value: "8000"
+      - key: MAX_CONCURRENT_SCRAPES
+        value: "5"
+      - key: MAX_CONCURRENT_LLM_CALLS
+        value: "4"

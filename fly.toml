@@ -1,0 +1,19 @@
+# fly.toml — generated for Fly.io deployment
+# Replace "traceable-search" with your own app name (must be globally unique on Fly.io)
+
+app = "traceable-search"
+primary_region = "iad"  # Washington DC — change to nearest: lhr=London, nrt=Tokyo, etc.
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true   # scale to zero when idle (saves cost)
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1
