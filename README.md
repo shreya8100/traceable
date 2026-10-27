@@ -2,7 +2,7 @@
 
 Type a topic, get a structured table of entities extracted from the web — every cell linked back to the exact quote it came from.
 
-**Live demo:** https://traceable-search.fly.dev
+**Live demo:** https://traceable-search.onrender.com/
 
 ## What it does
 
